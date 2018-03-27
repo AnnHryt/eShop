@@ -1,22 +1,13 @@
 %h1 Listing products
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Image url
-      %th Price
-      %th
-      %th
-      %th
-
+%table{:class => "table table-bordered table-striped"}
   %tbody
     - @products.each do |product|
       %tr
-        %td= product.title
-        %td= product.description
-        %td= product.image_url
+        %td= image_tag product.image_url
+        %td
+          %h2=product.title
+          %p=product.description
         %td= product.price
         %td= link_to 'Show', product
         %td= link_to 'Edit', edit_product_path(product)
