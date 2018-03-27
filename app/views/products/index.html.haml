@@ -9,9 +9,11 @@
           %h2=product.title
           %p=product.description
         %td= product.price
-        %td= link_to 'Show', product
-        %td= link_to 'Edit', edit_product_path(product)
-        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          %ul{:class => "list-unstyled"}
+            %li= link_to 'Show', product
+            %li= link_to 'Edit', edit_product_path(product)
+            %li= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
