@@ -1,0 +1,8 @@
+sudo: required
+dist: trusty
+language: ruby
+rvm:
+  - 2.3.0
+
+script:
+  - xvfb-run -a bundle exec rspec --color --format documentation
